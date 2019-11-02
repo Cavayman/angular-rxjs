@@ -3,7 +3,16 @@
     <mat-card-title>Poll component</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-      poll poll poll
+     <div *ngIf="startPolling">
+       <p><b>What are the types of questions in a questionnaire?</b></p>
+       <button mat-button  color="primary">A) Blue</button>
+       <button mat-button  color="primary">B) Subscriber</button>
+       <button mat-button  color="primary">C) Observable</button>
+       <button mat-button  color="primary">D) JavaScript</button>
+     </div>
+    <div *ngIf="!startPolling">
+      <mat-card>Sorry, you can't participate in this, because you are online</mat-card>
+    </div>
   </mat-card-content>
   <mat-card-actions>
   </mat-card-actions>

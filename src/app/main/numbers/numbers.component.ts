@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NumberStoreService} from '../../shared/services/number-store.service';
 
 @Component({
   selector: 'app-numbers',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NumbersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private numberService: NumberStoreService) {
+  }
 
   ngOnInit() {
   }

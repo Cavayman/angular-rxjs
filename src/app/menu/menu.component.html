@@ -5,14 +5,16 @@
     </div>
     <div>
       <button mat-button [matMenuTriggerFor]="menu">
+        Choose Theme
         <mat-icon aria-hidden="false">
           format_color_fill
         </mat-icon>
+
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Dark</button>
-        <button mat-menu-item>White</button>
-        <button mat-menu-item>🔥Custom Fun🔥</button>
+      <mat-menu #menu="matMenu" >
+        <button mat-menu-item (click)="changeTheme('dark-theme')">Dark</button>
+        <button mat-menu-item (click)="changeTheme('light-theme')">Light</button>
+        <button mat-menu-item (click)="changeTheme('custom-theme')">🔥Custom Fun🔥</button>
       </mat-menu>
     </div>
   </mat-toolbar-row>

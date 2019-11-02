@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MetaInformationService} from '../../shared/services/meta-information.service';
 
 @Component({
   selector: 'app-poll',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollComponent implements OnInit {
 
-  constructor() { }
+  startPolling = false;
+
+  constructor(private metaInfService: MetaInformationService) {
+  }
 
   ngOnInit() {
+    this.metaInfService.getOnlineStatus().subscribe(res => this.startPolling = res);
   }
 
 }
